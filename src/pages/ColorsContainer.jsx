@@ -32,6 +32,7 @@ function ColorsContainer() {
         {colors.map((color) => {
           return (
             <span
+            key={color}
               style={{ backgroundColor: color }}
               className="h-7 w-7 rounded-full cursor-pointer"
               onClick={() => {

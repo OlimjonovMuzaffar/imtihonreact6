@@ -12,35 +12,30 @@ function Movies({ data }) {
           data.Search.map((mov) => {
             const { imdbID } = mov;
             return (
-              <NavLink to={`readmore/${imdbID}`}>
-                {""}
-                <div
-                  key={imdbID}
-                  className="card w-96 bg-red-900 shadow-xl h-[600px]"
-                >
-                  <figure className="px-10 pt-10">
+              <div key={imdbID} className="card w-96 bg-red-900 shadow-xl h-[600px]">
+                <figure className="px-10 pt-10">
+                  <NavLink to={`readmore/${imdbID}`}>
+                    {""}
                     <img
                       src={mov.Poster}
                       alt="Shoes"
                       className="rounded-xl w-[300px] h-[380px]"
                     />
-                  </figure>
-                  <div className="card-body items-center text-center">
-                    <h3 className="text-1xl font-mono font-semibold text-white">
-                      Title: {mov.Title}
-                    </h3>
-                    <p className="text-xl font-mono text-white">
-                      Type: {mov.Type}
-                    </p>
-                    <h1 className="text-xl font-mono text-white">
-                      Year: {mov.Year}
-                    </h1>
-                    <p className="text-xl font-mono text-white">
-                      {data.Actors}
-                    </p>
-                  </div>
+                  </NavLink>
+                </figure>
+                <div className="card-body items-center text-center">
+                  <h3 className="text-1xl font-mono font-semibold text-white">
+                    Title: {mov.Title}
+                  </h3>
+                  <p className="text-xl font-mono text-white">
+                    Type: {mov.Type}
+                  </p>
+                  <h1 className="text-xl font-mono text-white">
+                    Year: {mov.Year}
+                  </h1>
+                  <p className="text-xl font-mono text-white">{data.Actors}</p>
                 </div>
-              </NavLink>
+              </div>
             );
           })}
       </div>
