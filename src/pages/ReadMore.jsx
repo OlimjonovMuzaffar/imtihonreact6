@@ -1,5 +1,6 @@
-import { useParams } from "react-router-dom";
+import { NavLink, useParams } from "react-router-dom";
 import { useFetch } from "../hooks/useFetch";
+
 
 function ReadMore() {
   const id1 = useParams();
@@ -19,70 +20,45 @@ function ReadMore() {
   return (
     <div className="max-w-6xl mx-auto mt-[100px]  ">
       {data && (
-        <div className="card w-96 bg-red-600 shadow-xl items-center flex ml-[400px]">
-          <div className="card-body">
-            <h2 className="text-xl font-sans font-extrabold text-white">
-              Title:{" "}
-              <span
-                className="text-lg font-mono text-white 
-            "
-              >
-                {data.Title}
-              </span>
-            </h2>
-            <h2 className="text-xl font-sans font-extrabold text-white">
-              Released:{" "}
-              <span
-                className="text-lg font-mono text-white 
-            "
-              >
-                {data.Released}
-              </span>
-            </h2>
-
-            <h2 className="text-xl font-sans font-extrabold text-white">
-              Langueage:{" "}
-              <span
-                className="text-lg font-mono text-white 
-            "
-              >
-                {data.Language}
-              </span>
-            </h2>
-            <h2 className="text-xl font-sans font-extrabold text-white">
-              Rating:{" "}
-              <span
-                className="text-lg font-mono text-white 
-            "
-              >
-                {data.Ratings[0].Value}
-              </span>
-            </h2>
-
-            <h2 className="text-xl font-sans font-extrabold text-white">
-              Country:{" "}
-              <span
-                className="text-lg font-mono text-white 
-            "
-              >
-                {data.Country}
-              </span>
-            </h2>
-
-            <h2 className="text-xl font-sans font-extrabold text-white">
-              Runtime: {""}
-              <span className="text-lg font-mono text-white">
-                {data.Runtime}
-              </span>
-            </h2>
-            <p className="text-xl font-sans font-extrabold text-white">
-              Plot:
-              <span className="text-sm font-mono text-white"> {data.Plot}</span>
-            </p>
-          </div>
+        <div className="card  bg-red-600 readmore lg:card-side  shadow-xl shadow-[black]">
           <figure>
-            <img className="rounded mb-5" src={data.Poster} alt="Shoes" />
+            <img
+              className=" readmoreimg ml-7 rounded-lg"
+              src={data.Poster}
+              alt="Album"
+            />
           </figure>
+          <div className="card-body gap-y-2">
+            <h2 className="text-xl font-sans font-extrabold   ">
+              {data.Title}
+            </h2>
+            <h2 className="text-xl font-sans font-extrabold   ">
+              {data.Released}
+            </h2>
+
+            <h2 className="text-xl font-sans font-extrabold   ">
+              {data.Language}
+            </h2>
+            <h2 className="text-xl font-sans font-extrabold   ">
+              {data.Ratings[0].Value}
+            </h2>
+
+            <h2 className="text-xl font-sans font-extrabold  ">
+              {data.Country}
+            </h2>
+
+            <h2 className="text-xl font-sans font-extrabold  ">
+              {data.Runtime}
+            </h2>
+            <h2 className="text-xl font-sans font-extrabold  ">
+              {data.Plot}
+            </h2>
+            <div className="card-actions justify-end"></div>
+          </div>
+
+          <NavLink to="/">
+            <button className=" buttton btn btn-neutral">Menu</button>
+          </NavLink>
         </div>
       )}
     </div>

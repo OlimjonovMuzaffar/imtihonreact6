@@ -21,10 +21,11 @@ function Header() {
 
   return (
     <div className="bg-red-600 py-5">
-
-      <NavLink to="/">
+      <NavLink to="https://www.netflix.com/uz/">
         <div className="max-w-5xl mx-auto px-4 flex justify-between ">
-          <h1 className="text-4xl font-mono font-extrabold mt-12 ">Netflix</h1>
+          <h1 className="text-4xl font-mono font-extrabold mt-12 text-black ">
+            Netflix
+          </h1>
           <img className="rounded-2xl" src="../imagesLOGO/images.png" alt="" />
         </div>
       </NavLink>

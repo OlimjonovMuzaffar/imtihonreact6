@@ -3,6 +3,7 @@ import { useFetch } from "../hooks/useFetch";
 import Movies from "./Movies";
 import ColorsContainer from "./ColorsContainer";
 
+
 function Home() {
  
   const [url, setUrl] = useState(
@@ -33,10 +34,11 @@ function Home() {
   };
 
   return (
-    <div className="max-w-6xl flex  flex-col max-sm:items-center  mx-auto mt-[100px]  ">
+    <div className=" max-w-6xl flex  flex-col max-sm:items-center  mx-auto  ">
       <ColorsContainer />
-      
-      <div className="flex max-w-full max-sm:items-start max-md:px-5 max-sm:flex-col max-sm:gap-6 mb-5 justify-between">
+     
+
+      <div className=" inputs flex max-w-full max-sm:items-start max-md:px-5 max-sm:flex-col max-sm:gap-6 mb-5 justify-between">
         <form onSubmit={hendilSubmit}>
           <label className="relative max-sm:w-full">
             <input
@@ -45,14 +47,10 @@ function Home() {
               }}
               type="text"
               placeholder="Search Movie"
-              className="input input-bordered input-error w-full max-w-xs"
+              className="input input-bordered input-error w-full max-w-xs text-white"
             />
           </label>
         </form>
-
-        <h1 className="text-4xl font-mono font-extrabold mt-[-100px] ">
-          MOVIES
-        </h1>
 
         <select
           className="select select-error w-full max-w-xs select-lg "
@@ -62,7 +60,6 @@ function Home() {
             );
           }}
         >
-
           <option className="text3-xl font-serif font-bold" value="fantastic">
             fantastic
           </option>
