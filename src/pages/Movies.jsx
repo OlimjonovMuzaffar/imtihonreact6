@@ -12,7 +12,10 @@ function Movies({ data }) {
           data.Search.map((mov) => {
             const { imdbID } = mov;
             return (
-              <div key={imdbID} className="card w-96 bg-red-900 shadow-xl h-[600px]">
+              <div
+                key={imdbID}
+                className="card w-96 bg-red-900 Laptop:grid-cols-2 shadow-xl h-[600px]"
+              >
                 <figure className="px-10 pt-10">
                   <NavLink to={`readmore/${imdbID}`}>
                     {""}
